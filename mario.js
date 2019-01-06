@@ -1,5 +1,5 @@
 
-printPyramid(5);
+drawPyramid(5);
 
 
 /*
@@ -13,7 +13,7 @@ printPyramid(5);
  *       #####
  *      ######
  */
-function printPyramid(height) {
+function drawPyramid(height) {
     // MY DUMB CODE
     // const hash = '#';
     // const space = ' ';
@@ -32,8 +32,16 @@ function printPyramid(height) {
     // }
 
     // BEST CODE
+    let pyramidNode = document.getElementById("pyramid");
+
     for (let i = 1; i < height + 1; i++) {
-    	console.log(' '.repeat(height - i) + '#'.repeat(i + 1));
+    	let step = document.createElement("p");
+    	step.textContent = '\u00A0'.repeat(height - i) + '#'.repeat(i + 1);
+    	pyramidNode.appendChild(step);
     }
+    document.getElementById('construction').remove();
 }
+
+//let a = document.getElementById("pyramid");
+//a.textContent = 'fuck off';
 
