@@ -14,34 +14,25 @@ drawPyramid(5);
  *      ######
  */
 function drawPyramid(height) {
-    // MY DUMB CODE
-    // const hash = '#';
-    // const space = ' ';
-
-    // for (let i = 0; i < height; i++) {
-    //  	let step = '';
-    //  	let countSpaces = height - i - 1;
-    //  	let countHashes = 2 + i;
-    //  	for (let j = 0; j < countSpaces; j++) {
-    //  		step += space;
-    //  	}
-    //  	for (let k = 0; k < countHashes; k++) {
-    //  		step += hash;
-    //  	}
-    //  	console.log(step);
-    // }
-
-    // BEST CODE
     let pyramidNode = document.getElementById("pyramid");
 
     for (let i = 1; i < height + 1; i++) {
-    	let step = document.createElement("p");
-    	step.textContent = '\u00A0'.repeat(height - i) + '#'.repeat(i + 1);
+    	let step = document.createElement("div");
+        for (let j = 0; j < height - i; j++) {
+            let divSpace = document.createElement('div');
+            divSpace.className = 'space';
+            step.appendChild(divSpace);
+        }
+        for (let k = 0; k < i + 1; k++) {
+            let divHash = document.createElement('div');
+            divHash.className = 'hash';
+            step.appendChild(divHash);
+            //step.appendChild(document.createElement('p'));
+        }
+        // step.textContent = '\u00A0'.repeat(height - i) + '#'.repeat(i + 1);
     	pyramidNode.appendChild(step);
     }
     document.getElementById('construction').remove();
 }
 
-//let a = document.getElementById("pyramid");
-//a.textContent = 'fuck off';
 
