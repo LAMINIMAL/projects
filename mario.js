@@ -1,5 +1,5 @@
 
-drawPyramid(5);
+drawPyramid(14);
 
 
 /*
@@ -27,7 +27,6 @@ function drawPyramid(height) {
             let divHash = document.createElement('div');
             divHash.className = 'hash';
             step.appendChild(divHash);
-            //step.appendChild(document.createElement('p'));
         }
         // step.textContent = '\u00A0'.repeat(height - i) + '#'.repeat(i + 1);
     	pyramidNode.appendChild(step);
